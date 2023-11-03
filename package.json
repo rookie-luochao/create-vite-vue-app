@@ -63,10 +63,10 @@
     }
   },
   "lint-staged": {
-    "*.(ts|vue)": [
+    "*.(ts|vue|cjs)": [
       "eslint --quiet"
     ],
-    "*.(ts|vue|json|html)": [
+    "*.(ts|vue|json|html|cjs)": [
       "prettier --write"
     ]
   },
