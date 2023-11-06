@@ -1,6 +1,7 @@
 import axios, { AxiosRequestConfig } from "axios";
 // import { ILoginInfoStorageState, defaultLoginInfoStorage, loginInfoStorageKey } from "../store";
 import { getConfig } from "./config";
+import { IUserInfo, defaultUserInfo, userInfoStorageKey } from "../store/user";
 
 const BASE_URL = getConfig().baseURL;
 
@@ -23,14 +24,12 @@ instance.interceptors.response.use((response) => {
 });
 
 instance.interceptors.request.use((config) => {
-  // const loginInfoStorageStr = globalThis.localStorage.getItem(loginInfoStorageKey);
-  // const loginInfoStorage = loginInfoStorageStr
-  //   ? (JSON.parse(loginInfoStorageStr) as ILoginInfoStorageState)
-  //   : defaultLoginInfoStorage;
+  const userInfoStorageStr = globalThis.localStorage.getItem(userInfoStorageKey);
+  const userInfo = userInfoStorageStr ? (JSON.parse(userInfoStorageStr) as IUserInfo) : defaultUserInfo;
 
-  // if (loginInfoStorage.state.loginInfo) {
-  //   config.headers.Authorization = loginInfoStorage.state.loginInfo.accessToken;
-  // }
+  if (userInfo.accessToken) {
+    config.headers.Authorization = userInfo.accessToken;
+  }
 
   return config;
 });

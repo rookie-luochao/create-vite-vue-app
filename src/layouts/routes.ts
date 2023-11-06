@@ -6,6 +6,5 @@ export const mainRoutes: RouteRecordRaw = {
   path: "/main",
   name: "Main",
   component: MainLayout,
-  redirect: "/main/dashboard",
   children: viewsRoutes,
 };

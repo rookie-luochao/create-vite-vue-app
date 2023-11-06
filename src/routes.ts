@@ -5,7 +5,7 @@ import { mainRoutes } from "./layouts/routes";
 export const routes: RouteRecordRaw[] = [
   {
     path: "/",
-    redirect: "/main",
+    redirect: "/login",
   },
   loginRoutes,
   mainRoutes,
