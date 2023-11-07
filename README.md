@@ -1,4 +1,4 @@
-# Vue 3 + TypeScript + Vite + Pnpm + Pinia + Docker
+# Vue 3 + TypeScript + Vite + Pnpm + Pinia + Openapi + Docker
 
 该模板可以帮助您在 Vite 中使用 Vue 3 和 TypeScript 进行开发. 该模板使用 Vue 3 `<script setup>` SFCs, 打开 [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) 去学习.
 
@@ -10,6 +10,29 @@
 * 同步接口请求状态，实现自动loading
 * 支持接口联动，方便跨父子组件刷新相关联的接口
 * 支持容器化变量注入，无需前端配置文件写死，方便通过 k8s 动态注入
+
+#### 核心技术
+* 打包编译 - [vite](https://github.com/vitejs/vite)
+* 包管理 - [pnpm](https://github.com/pnpm/pnpm)
+* 编程语言 - [typescript](https://github.com/microsoft/TypeScript)
+* 前端框架 - [vue](https://github.com/vuejs/core)
+* 路由 - [vue-router](https://github.com/vuejs/router)
+* UI组件库 - [element-plus](https://github.com/element-plus/element-plus)
+* 全局数据共享 - [pinia](https://github.com/vuejs/pinia)
+* 自动生成api - [openapi](https://github.com/chenshuai2144/openapi2typescript)
+* 网络请求 - [axios](https://github.com/axios/axios)
+* 数据请求利器 - [vue-query](https://github.com/TanStack/query/tree/main/packages/vue-query)
+* 通用hook(可不用) - [vueuse](https://github.com/vueuse/vueuse)
+* hack - [babel](https://github.com/babel/babel)
+* 代码检查 - [eslint](https://github.com/eslint/eslint)
+* ts代码检查插件 - [typescript-eslint](https://github.com/typescript-eslint/typescript-eslint)
+* 代码美化 - [prettier](https://github.com/prettier/prettier)
+* git钩子 - [husky](https://github.com/typicode/husky)
+* commit格式化 -[commitlint](https://github.com/conventional-changelog/commitlint)
+
+#### 技术说明
+* 自动生成api(openapi): 后端接入apenapi后，前端可以根据openapi文件自动生成request api
+* 通用hook(vueuse): 一个hook工具库，该库可以依据个人喜好选择是否使用
   
 #### 快速开始
 ```bash
@@ -86,29 +109,6 @@ const appConfig: IConfig = {
 * 项目 dev 环境变量配置在`src/config.ts`
 * 项目 prod 环境变量配置在`.env.production`，详情参考：[vite环境变量](https://cn.vitejs.dev/guide/env-and-mode.html)
 * 项目 prod 环境变量也可以使用容器变量 ARG，我们会读取容器变量并注入到前端meta标签的content里面，目前html文件提供了两个mate标签(env、app_config)接收变量，格式详情参考：`index.html` 和 `src/core/http/config.ts`
-
-#### 核心技术
-* 打包编译 - [vite](https://github.com/vitejs/vite)
-* 包管理 - [pnpm](https://github.com/pnpm/pnpm)
-* 编程语言 - [typescript](https://github.com/microsoft/TypeScript)
-* 前端框架 - [vue](https://github.com/vuejs/core)
-* 路由 - [vue-router](https://github.com/vuejs/router)
-* UI组件库 - [element-plus](https://github.com/element-plus/element-plus)
-* 全局数据共享 - [pinia](https://github.com/vuejs/pinia)
-* 自动生成api - [openapi](https://github.com/chenshuai2144/openapi2typescript)
-* 网络请求 - [axios](https://github.com/axios/axios)
-* 数据请求利器 - [vue-query](https://github.com/TanStack/query/tree/main/packages/vue-query)
-* 通用hook(可不用) - [vueuse](https://github.com/vueuse/vueuse)
-* hack - [babel](https://github.com/babel/babel)
-* 代码检查 - [eslint](https://github.com/eslint/eslint)
-* ts代码检查插件 - [typescript-eslint](https://github.com/typescript-eslint/typescript-eslint)
-* 代码美化 - [prettier](https://github.com/prettier/prettier)
-* git钩子 - [husky](https://github.com/typicode/husky)
-* commit格式化 -[commitlint](https://github.com/conventional-changelog/commitlint)
-
-#### 技术说明
-* 自动生成api(openapi): 后端接入apenapi后，前端可以根据openapi文件自动生成request api
-* 通用hook(vueuse): 一个hook工具库，该库可以依据个人喜好选择是否使用
 
 #### 调用接口(react-query), 支持自动loading和接口请求联动
 ```bash
