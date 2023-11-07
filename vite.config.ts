@@ -15,4 +15,9 @@ export default defineConfig({
       resolvers: [ElementPlusResolver()],
     }),
   ],
+  resolve: {
+    alias: {
+      "@request": "../core/http/request.ts",
+    },
+  },
 });

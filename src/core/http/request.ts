@@ -25,7 +25,7 @@ instance.interceptors.response.use((response) => {
 
 instance.interceptors.request.use((config) => {
   const userInfoStorageStr = globalThis.localStorage.getItem(userInfoStorageKey);
-  const userInfo = userInfoStorageStr ? (JSON.parse(userInfoStorageStr) as IUserInfo) : defaultUserInfo;
+  const userInfo = userInfoStorageStr ? (JSON.parse(userInfoStorageStr).userInfo as IUserInfo) : defaultUserInfo;
 
   if (userInfo.accessToken) {
     config.headers.Authorization = userInfo.accessToken;

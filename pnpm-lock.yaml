@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@commitlint/cli': ^18.2.0
   '@commitlint/config-conventional': ^18.1.0
+  '@tanstack/vue-query': ^5.7.3
   '@types/lodash-es': ^4.17.10
   '@types/node': ^20.8.10
   '@typescript-eslint/eslint-plugin': ^6.9.1
@@ -29,6 +30,7 @@ specifiers:
   vue-tsc: ^1.8.5
 
 dependencies:
+  '@tanstack/vue-query': 5.7.3_vue@3.3.7
   axios: 1.6.0
   element-plus: 2.4.1_vue@3.3.7
   lodash-es: 4.17.21
@@ -2000,6 +2002,33 @@ packages:
 
   /@sxzz/popperjs-es/2.11.7:
     resolution: {integrity: sha512-Ccy0NlLkzr0Ex2FKvh2X+OyERHXJ88XJ1MXtsI9y9fGexlaXaVTPzBCRBwIxFkORuOb+uBqeu+RqnpgYTEZRUQ==}
+    dev: false
+
+  /@tanstack/match-sorter-utils/8.8.4:
+    resolution: {integrity: sha512-rKH8LjZiszWEvmi01NR72QWZ8m4xmXre0OOwlRGnjU01Eqz/QnN+cqpty2PJ0efHblq09+KilvyR7lsbzmXVEw==}
+    engines: {node: '>=12'}
+    dependencies:
+      remove-accents: 0.4.2
+    dev: false
+
+  /@tanstack/query-core/5.7.2:
+    resolution: {integrity: sha512-vPYoNCOI8W+jFLnyEAYQL7/qURE7XzVE/TvkmNSko8LU55jFshee342p4GNFOTsYFgJty7Da5bw4m2P3vaKWMw==}
+    dev: false
+
+  /@tanstack/vue-query/5.7.3_vue@3.3.7:
+    resolution: {integrity: sha512-jly+s82btmWpdZA5ifmA1qHvua4l6uKGV/tvUryTxNpW9g6hqtMyYcNinjZAZqhIYsVHmOhfAld3vgET/8hjqg==}
+    peerDependencies:
+      '@vue/composition-api': ^1.1.2
+      vue: ^2.6.0 || ^3.3.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dependencies:
+      '@tanstack/match-sorter-utils': 8.8.4
+      '@tanstack/query-core': 5.7.2
+      '@vue/devtools-api': 6.5.1
+      vue: 3.3.7_typescript@5.2.2
+      vue-demi: 0.14.6_vue@3.3.7
     dev: false
 
   /@tsconfig/node10/1.0.9:
@@ -6201,6 +6230,10 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /remove-accents/0.4.2:
+    resolution: {integrity: sha512-7pXIJqJOq5tFgG1A2Zxti3Ht8jJF337m4sowbuHsW30ZnkQFnDzy9qBNhgzX8ZLW4+UBcXiiR7SwR6pokHsxiA==}
+    dev: false
 
   /repeat-string/1.6.1:
     resolution: {integrity: sha512-PV0dzCYDNfRi1jCDbJzpW7jNNDRuCOG/jI5ctQcGKt/clZD+YcPS3yIlWuTJMmESC8aevCFmWJy5wjAFgNqN6w==}

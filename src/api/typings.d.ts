@@ -15,13 +15,6 @@ declare namespace Api {
     name: string;
   };
 
-  type HelloGetWithPathParams = {
-    /** 名字 */
-    name: string;
-    /** 年龄 */
-    age: number;
-  };
-
   type HelloPostParam = {
     name?: string;
   };
@@ -47,7 +40,7 @@ declare namespace Api {
     total?: number;
   };
 
-  type MobileType = "移动" | "联通";
+  type MobileType = string;
 
   type User = {
     createdAt?: string;
@@ -64,5 +57,5 @@ declare namespace Api {
     userType?: UserType;
   };
 
-  type UserType = 0 | 1 | 2;
+  type UserType = "ADMIN" | "USER";
 }
