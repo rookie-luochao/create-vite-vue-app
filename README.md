@@ -148,12 +148,12 @@ export async function HelloPost(body: Api.HelloPostParam, options?: { [key: stri
 
 // 提交编辑数据
 const queryClient = useQueryClient();
-const userStore = useUserStore();
+const userInfoStore = useUserInfoStore();
 const { mutate, isPending } = useMutation({
   mutationFn: HelloPost,
   onSuccess: (res) => {
     // 第一种刷新方式：修改store
-    userStore.updateUserInfo({ name: res.data });
+    userInfoStore.updateUserInfo({ name: res.data });
     // 第二种刷新方式：通过清除vue-query缓存key
     queryClient.invalidateQueries({ queryKey: ["helloGet"] });
   },
